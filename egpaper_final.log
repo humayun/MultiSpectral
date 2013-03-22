@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.10.1)  21 MAR 2013 17:24
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.10.1)  22 MAR 2013 11:15
 entering extended mode
 **egpaper_final.tex
 ("F:\PhD\Mayu Papers\2013_ICCV\Multispectral\egpaper_final.tex"
@@ -278,7 +278,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip48
 )
-No file egpaper_final.aux.
+("F:\PhD\Mayu Papers\2013_ICCV\Multispectral\egpaper_final.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
@@ -294,6 +294,7 @@ LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 25.
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -346,8 +347,6 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 48.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 48.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
@@ -355,85 +354,77 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
  [4321{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
 
-LaTeX Warning: Citation `Authors13' on page 4322 undefined on input line 194.
+LaTeX Warning: Citation `Authors13' on page 4322 undefined on input line 190.
 
 
-LaTeX Warning: Citation `Authors13b' on page 4322 undefined on input line 206.
+LaTeX Warning: Citation `Authors13b' on page 4322 undefined on input line 202.
 
 [4322]
 
-LaTeX Warning: Citation `Alpher02' on page 4323 undefined on input line 278.
+LaTeX Warning: Citation `Alpher02' on page 4323 undefined on input line 274.
 
 
-LaTeX Warning: Citation `Alpher03' on page 4323 undefined on input line 279.
+LaTeX Warning: Citation `Alpher03' on page 4323 undefined on input line 275.
 
 
-LaTeX Warning: Citation `Alpher04' on page 4323 undefined on input line 279.
+LaTeX Warning: Citation `Alpher04' on page 4323 undefined on input line 275.
 
 
-LaTeX Warning: Citation `Alpher03' on page 4323 undefined on input line 281.
+LaTeX Warning: Citation `Alpher03' on page 4323 undefined on input line 277.
 
 
-LaTeX Warning: Citation `Alpher03' on page 4323 undefined on input line 282.
+LaTeX Warning: Citation `Alpher03' on page 4323 undefined on input line 278.
 
 
-LaTeX Warning: Citation `Alpher03' on page 4323 undefined on input line 287.
+LaTeX Warning: Citation `Alpher03' on page 4323 undefined on input line 283.
 
 
-LaTeX Warning: Citation `Alpher02' on page 4323 undefined on input line 287.
+LaTeX Warning: Citation `Alpher02' on page 4323 undefined on input line 283.
 
 
-LaTeX Warning: Citation `Authors13' on page 4323 undefined on input line 287.
+LaTeX Warning: Citation `Authors13' on page 4323 undefined on input line 283.
 
 
-LaTeX Warning: Citation `Alpher02' on page 4323 undefined on input line 288.
+LaTeX Warning: Citation `Alpher02' on page 4323 undefined on input line 284.
 
 
-LaTeX Warning: Citation `Alpher03' on page 4323 undefined on input line 288.
+LaTeX Warning: Citation `Alpher03' on page 4323 undefined on input line 284.
 
 
-LaTeX Warning: Citation `Authors13' on page 4323 undefined on input line 288.
-
-
-LaTeX Warning: Reference `fig:onecol' on page 4323 undefined on input line 363.
-
-
-
-LaTeX Warning: Reference `fig:short' on page 4323 undefined on input line 363.
+LaTeX Warning: Citation `Authors13' on page 4323 undefined on input line 284.
 
 [4323]
 
-LaTeX Warning: Citation `Authors13' on page 4324 undefined on input line 398.
+LaTeX Warning: Citation `Authors13' on page 4324 undefined on input line 394.
 
 No file egpaper_final.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 458.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 454.
 [4324]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 458.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 454.
  ("F:\PhD\Mayu Papers\2013_ICCV\Multispectral\egpaper_final.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 458.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 458.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 454.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 454.
 
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 458.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 454.
  ) 
 Here is how much of TeX's memory you used:
- 6093 strings out of 494045
- 87104 string characters out of 3145963
- 177479 words of memory out of 3000000
- 9277 multiletter control sequences out of 15000+200000
- 34949 words of font info for 86 fonts, out of 3000000 for 9000
+ 6089 strings out of 494045
+ 87129 string characters out of 3145963
+ 178976 words of memory out of 3000000
+ 9271 multiletter control sequences out of 15000+200000
+ 33404 words of font info for 80 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 34i,9n,24p,309b,320s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,9n,24p,484b,320s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Fil
@@ -447,9 +438,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX
 ype1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/ti
 mes/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a
 .pfb>
-Output written on egpaper_final.pdf (4 pages, 153365 bytes).
+Output written on egpaper_final.pdf (4 pages, 153570 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
+ 102 PDF objects out of 1000 (max. 8388607)
  25 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
