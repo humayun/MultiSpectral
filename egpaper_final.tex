@@ -29,18 +29,16 @@
 \title{Multispectral Texture characterization: Application to Mitotic Count in Breast Cancer Histopathology}
 
 \author{Humayun Irshad, Ludovic Roux\\
-University Joseph Fourier Grenoble, France\\
-{\tt\small {humayun.irshad, ludvoic.roux}@ipal.cnrs.fr} \\
-\and 
-Alexandre Gouallard\\
-Institution2\\
-First line of institution2 address\\
-{\tt\small secondauthor@i2.org} \\
-\and
-Daniel Racoceanu\\
-University Pierre and Marie Curie\\
-France\\
-{\tt\small daniel.racoceanu@upmc.fr}
+	University Joseph Fourier Grenoble \\ France\\
+	{\tt\small {humayun.irshad, ludvoic.roux}@ipal.cnrs.fr} \\
+	\and 
+	Alexandre Gouallard\\
+	Institution2\\ First line of institution2 address\\
+	{\tt\small secondauthor@i2.org} \\
+	\and
+	Daniel Racoceanu\\
+	University Pierre and Marie Curie \\ France\\
+	{\tt\small daniel.racoceanu@upmc.fr}
 }
 
 \maketitle
@@ -53,7 +51,6 @@ Multispectral Imaging (MSI) ...
 
 %%%%%%%%% BODY TEXT
 \section{Introduction}
-%Medical (Scanner, big objects, not to many) vs Biology/biomedical (microscopic, small objects, large in quantity)
 
 In medical image analysis, computer aided detection/diagnosis (CAD) systems are popular for clinical purposes (medical procedures seeking to divulge, diagnose or examine disease) and medical science (including the study of body anatomy and physiology). CAD systems are extensively used in the detection and differential diagnosis of many different types of abnormalities in medical images obtained using different imaging modalities. Medical image analysis in radiology (x-rays, ultrasound, MRI, CT and mammogram) and cytology domains have been major research fields for several decades and numerous systems \cite{sonka2000, erickson2002, summers2003, giger2004, bankman2008, he2009, plissiti2013} and software platforms
 \footnote{3D Slicer, http://slicer.org/}$^,$
@@ -62,9 +59,9 @@ In medical image analysis, computer aided detection/diagnosis (CAD) systems are 
 \footnote{Infinite Radiology, http://infiniteradiology.com/}$^,$
 \footnote{PATHOS-WEB, http://pathos-web.sourceforge.net/}$^,$
 \footnote{Xebra (medical imaging software), http://en.vionto.com/show/me/Xebra}
- have been developed for these domains. The application of these systems to histopathology is complicated due to radically different imaging modalities and image characteristics. In general, histology images are considerably different from radiology images, having a large amount of object of interest (like nuclei) widely distributed in the images and surrounded by different neighbouring tissues like stroma, fat and cervix. In addition, histopathology tissues are generally stained with different colors while radiology images usually contain only gray intensities. Although, cytology images have some similarities to histology images but both images are taken at different magnification level. In case of histology images, low magnification level allows analysis of tissue structure but cannot provide in-depth information of internal cell structure as available in cytology.
+ have been developed for these domains. The application of these systems to histopathology is complicated due to radically different imaging modalities and image characteristics. In general, histology images are considerably different from radiology images, having a large amount of objects of interest (like nuclei) widely distributed in the images and surrounded by different neighbouring tissues like blood vessels, muscle, stroma, and fat. In addition, histopathology tissues are generally stained with different colors while radiology images usually contain only gray intensities. Although, cytology images have some similarities to histology images but both images are taken at different magnification level. In case of histology images, cellular structure and function is studied while in histology, whole tissue having cells and architecture like gland formation are studied.
  
-According to World Health Organization, the reference process for breast cancer prognosis is histologic grading that combine tubule formation, nuclei atypia and mitotic counts \cite{bloom1957}. This assessment of tissue sample is synthesized into a diagnosis that would help the clinician determine the best course of therapy. We found sufficient number of CAD systems for tubule formation \cite{petushi2006, naik2008} and nuclei atypia \cite{cosatto2008, dalle2009, chaudhury2011, dundar2011}, but not enough for mitotic mitotic counts \cite{irshad2013a, irshad2013b}. One of the most difficult fields in histopathology imagery is spatial analysis, more specifically automated nuclei detection and classification \cite{fuchs2011}. The objective of nuclei classification is assign label to different type of nuclei as normal, cancer, mitotic, apoptosis, lymphocytes etc that in particular, a challenging problem to address in histopathology. In addition, quantitative characterization is important not only for clinical applications (e.g., to reduce/eliminate inter- and intra-observer variation in diagnosis) but also for research applications (e.g., to understand the biological mechanisms of the disease process \cite{gurcan2009}.
+According to World Health Organization, the reference process for breast cancer prognosis is histologic grading that combine tubule formation, nuclei atypia and mitotic counts \cite{bloom1957, elston1993}. This assessment of tissue sample is synthesized into a diagnosis that would help the clinician determine the best course of therapy. We found several CAD systems for tubule formation \cite{petushi2006, naik2008} and nuclei atypia \cite{cosatto2008, dalle2009, chaudhury2011, dundar2011}, but only few mitotic counts \cite{irshad2013a, irshad2013b}. One of the most difficult fields in histopathology imagery is spatial analysis, more specifically automated nuclei detection and classification \cite{fuchs2011}. The objective of nuclei classification is assign label to different type of nuclei as normal, cancer, mitotic, apoptosis, lymphocytes etc that in particular, a challenging problem to address in histopathology. In addition, quantitative characterization is important not only for clinical applications (e.g., to reduce/eliminate inter- and intra-observer variation in diagnosis) but also for research applications (e.g., to understand the biological mechanisms of the disease process \cite{gurcan2009}.
 
 In histopathology, H\&E is a well established staining technique that exploits intensity of stains in the tissue images to quantify the nuclei and other structures related to cancer developments. Image processing techniques in this context are devoted to the accurate and objective quantification and localization of such activity in specific regions of the tissue such as cytoplasm, membranes and nuclei. From the chromatic viewpoint, nuclear regions are characterized by non-uniform stain intensity and color, thus preventing a trivial classification based on color separation. In addition, the superposition of tissue layers as well as the diffusion of the dyes on the tissue surface may bring the stains to contaminate the background or other cellular regions which are different from their specific target.Recent work \cite{khan2012b, irshad2013a, irshad2013b} show great potential for CAD of histopathological datasets for breast cancer diagnosis.
 
