@@ -90,7 +90,7 @@ In the proposed methodology, we address limitation of the shortcomings in previo
 \label{sec:framework}
 \subsection{Dataset}
 
-We evaluated the proposed methodology on multispectral MITOS dataset \cite{mITOS2012}, a freely available mitosis dataset. The data set is made up of 50 high power fields (HPF) coming from five different slides scanned at 40X magnification using a 10 bands multispectral microscope. There are 10 HPFs per slide and each HPF has a size of $512\times512\mu\text{m}^2$ (that is an area of $0.262mm^2$). The spectral bands are all in the visible spectrum. In addition, for each spectral band, the digitization has been performed at 17 different focus planes (17 layers Z-stack), each plane being separated from the other by 500 nm. For one HPF, there are 170 gray scale images (10 spectral bands and 17 layers Z-stack for each spectral band). These 50 HPFs contain a total 322 mitotic cells. The training data set consists of 35 HPFs containing 226 mitotic cells and evaluation data set consists of 15 HPFs containing 98 mitotic cells \cite{roux2013}. Figure \ref{fig:spectral_bands} shows the spectral coverage of each of the 10~spectral bands of the multispectral microscope.
+We evaluated the proposed methodology on multispectral MITOS dataset \cite{mITOS2012}, a freely available mitosis dataset. The data set is made up of 50 high power fields (HPF) coming from five different slides scanned at 40X magnification using a 10 bands multispectral microscope. There are 10 HPFs per slide and each HPF has a size of $512\times512\mu\text{m}^2$ (that is an area of $0.262mm^2$). The spectral bands are all in the visible spectrum. In addition, for each spectral band, the digitization has been performed at 17 different focus planes (17 layers Z-stack), each plane being separated from the other by 500 nm. For one HPF, there are 170 gray scale images (10 spectral bands and 17 layers Z-stack for each spectral band). These 50 HPFs contain a total 322 mitotic cells. The training data set consists of 35 HPFs containing 224 mitotic cells and evaluation data set consists of 15 HPFs containing 98 mitotic cells \cite{roux2013}. Figure \ref{fig:spectral_bands} shows the spectral coverage of each of the 10~spectral bands of the multispectral microscope.
 \begin{figure}[t]
 	\centering
 	\begin{subfigure}[b]{0.5\textwidth}
@@ -159,24 +159,39 @@ In this paper, we propose a framework for MC based on spatial analysis of MSI in
 	\label{fig:framework}
 \end{figure}
 
+\begin{figure}[t]
+	\centering
+	\begin{subfigure}[b]{0.22\textwidth}
+		\includegraphics[width=\textwidth]{diagrams/AllBandsHistrogramActual.png}
+		\caption*{Mitotic region histogram}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.22\textwidth}
+		\includegraphics[width=\textwidth]{diagrams/AllBandsHistrogram.png}
+		\caption*{Band 0 Histogram}
+	\end{subfigure}
+	\caption{Histogram analysis of mitotic and background regions in 10 spectral bands.}
+	\label{fig:bands_histogram}	
+\end{figure}
+
 \subsubsection{Candidate Detection}
-Initially, we perform gradient analysis on all the focus planes and select focus plane 10 that is having averagely maximum gradient value. Using selected focus plane, we compute the spectral responses of mitotic nuclei and background regions for all the available 10 spectral bands as represents in figure 1(a) while responses of mitotic and non mitotic nuclei are presented in figure 1(b). The peak of the mitotic and non-mitotic nuclei is almost similar but mitotic and mitotic nuclei have different peaks than background regions. It can be said that multispectral data is able to discriminate between different tissue parts but spectral response of mitotic and non-mitotic nuclei is not distinguishable. This motivate us to perform spatial analysis on multispectral data for achieving reasonable classification nuclei into mitotic and non-mitotic nuclei. Using selected focus plane and spectral band, we perform binary thresholding followed by morphological processing to eliminate small regions and fill holes and later select the candidates by filtering based on minimum size of mitotic nuclei. 
+Initially, we perform gradient analysis on all the focus planes and select focus plane 10 that is having averagely maximum gradient value. Using selected focus plane, we compute the spectral responses of mitotic nuclei and background regions for all the available 10 spectral bands as represents in \ref{fig:bands_histogram}(a) while responses of mitotic and non mitotic nuclei are presented in \ref{fig:bands_histogram}(b). The peak of the mitotic and non-mitotic nuclei is almost similar but mitotic and mitotic nuclei have different peaks than background regions. It can be said that multispectral data is able to discriminate between different tissue parts but spectral response of mitotic and non-mitotic nuclei is not distinguishable. This motivate us to perform spatial analysis on multispectral data for achieving reasonable classification nuclei into mitotic and non-mitotic nuclei. Using selected focus plane and spectral band, we perform binary thresholding followed by morphological processing to eliminate small regions and fill holes and later select the candidates by filtering based on minimum size of mitotic nuclei ($18.5\mu\text{m}$ i.e., 100 pixels ) while keeping the number of of candidates to classify as low as possible. 
 
 \subsubsection{Multispectral Features Computation}
-Instead of single band as \cite{boucheron2007, masood2009, wu2009, wu2012}, we compute multispectral spatial feature vectors having intensity and textural features. In addition, we also include morphological features ( such as area, roundness, elongation, perimeter and equivalent spherical perimeter) that are computed from regions segmented during candidate detection. The morphological features reflect the phenotype information of mitotic nuclei. Utilizing spatial information in multispectral bands, we compute five intensity based features including mean, median, variance, kurtosis and skewness for candidate. This results in 50 multispectral intensity based features. Haralick co-occurrence (HC) \cite{haralick1973} and run-length (RL) \cite{galloway1975} features are computed with 1 displacement vector in four direction () for all the spectral bands as \cite{irshad2013b}. These multispectral textural features are rotationally invariant. So by making average in all four directions, eight HC and ten RL features are computed for each candidate in single spectral band. The resulted multispectral textural features vector consists of 80 HC features and 100 RL features for each candidates. The final multispectral spatial features vector contain 235 features for each candidate. 
+Instead of single band as \cite{boucheron2007, masood2009, wu2009, wu2012}, we compute multispectral spatial feature vectors having intensity and textural features. In addition, we also include morphological features ( such as area, roundness, elongation, perimeter and equivalent spherical perimeter) that are computed from regions segmented during candidate detection. The morphological features reflect the phenotype information of mitotic nuclei. Utilizing spatial information in multispectral bands, we compute five intensity based features including mean, median, variance, kurtosis and skewness for candidate. This results in 50 multispectral intensity based features. Haralick co-occurrence (HC) \cite{haralick1973} and run-length (RL) \cite{galloway1975} features are computed with 1 displacement vector in four direction () for all the spectral bands as \cite{irshad2013b}. These multispectral textural features are rotationally invariant. So by making average in all four directions, eight HC and ten RL features are computed for each candidate in single spectral band. The resulted multispectral textural features vector consists of 80 HC features and 100 RL features for each candidates. The final multispectral spatial features vector contains 235 features for each candidate. 
 
 \subsubsection{Feature Selection and Classification}
-
+For mitotic figure classification we use dimensionality reduction for learning and recognition of mitotic figures. 
 %------------------------------------------------------------------------
 \section{Experiments and Results}
 \label{sec:results}
 \subsection{Experiments}
-
+We evaluate the proposed framework on MITOS multispectral dataset \cite{mITOS2012}, a freely available mitosis dataset. On training and evaluation sets, the candidate detection stage detects 6000 and 4000 candidates, containing 160 and 80 ground-truth (GT) mitosis from a total 224 and 98 GT mitosis, respectively. Therefore, among the entire candidate mitosis there are 5840 and 3920 non mitosis in the training and evaluation sets. The candidate detection stage generates a large number of non-mitosis and misses 64 and 20 GT mitosis from training and evaluation sets, respectively. 
 \subsection{Results}
 
 %------------------------------------------------------------------------
 \section{Discussion and Conclusion}
 \label{sec:conclusion}
+
 %------------------------------------------------------------------------
 {\small
 \bibliographystyle{ieee}
