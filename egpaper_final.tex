@@ -160,19 +160,51 @@ In this paper, we propose a framework for MC based on spatial analysis of MSI in
 \begin{figure}[b]
 	\centering
 	\begin{subfigure}[b]{0.22\textwidth}
-		\includegraphics[width=\textwidth]{diagrams/AllBandsHistrogramActual.png}
-		\caption*{Mitotic region histogram}
+		\includegraphics[width=\textwidth]{diagrams/Band0.png}
+		\caption*{Spectral Band 0}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.22\textwidth}
-		\includegraphics[width=\textwidth]{diagrams/AllBandsHistrogram.png}
-		\caption*{Band 0 Histogram}
+		\includegraphics[width=\textwidth]{diagrams/Band1.png}
+		\caption*{Spectral Band 1}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.22\textwidth}
+		\includegraphics[width=\textwidth]{diagrams/Band2.png}
+		\caption*{Spectral Band 2}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.22\textwidth}
+		\includegraphics[width=\textwidth]{diagrams/Band3.png}
+		\caption*{Spectral Band 3}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.22\textwidth}
+		\includegraphics[width=\textwidth]{diagrams/Band4.png}
+		\caption*{Spectral Band 4}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.22\textwidth}
+		\includegraphics[width=\textwidth]{diagrams/Band5.png}
+		\caption*{Spectral Band 5}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.22\textwidth}
+		\includegraphics[width=\textwidth]{diagrams/Band6.png}
+		\caption*{Spectral Band 6}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.22\textwidth}
+		\includegraphics[width=\textwidth]{diagrams/Band7.png}
+		\caption*{Spectral Band 7}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.22\textwidth}
+		\includegraphics[width=\textwidth]{diagrams/Band8.png}
+		\caption*{Spectral Band 8}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.22\textwidth}
+		\includegraphics[width=\textwidth]{diagrams/Band9.png}
+		\caption*{Spectral Band 9}
 	\end{subfigure}
 	\caption{Histogram analysis of mitotic and background regions in 10 spectral bands.}
 	\label{fig:bands_histogram}	
 \end{figure}
 
 \subsubsection{Candidate Detection}
-Initially, we perform gradient analysis on all the focus planes and select focus plane 10 that is having averagely maximum gradient value. Using selected focus plane, we compute the spectral responses of mitotic nuclei and background regions for all the available 10 spectral bands as represents in \ref{fig:bands_histogram}(a) while responses of mitotic and non mitotic nuclei are presented in \ref{fig:bands_histogram}(b). The peak of the mitotic and non-mitotic nuclei is almost similar but mitotic and mitotic nuclei have different peaks than background regions. It can be said that multispectral data is able to discriminate between different tissue parts but spectral response of mitotic and non-mitotic nuclei is not distinguishable. This motivate us to perform spatial analysis on multispectral data for achieving reasonable classification nuclei into mitotic and non-mitotic nuclei. Using selected focus plane and spectral band, we perform binary thresholding followed by morphological processing to eliminate small regions and fill holes and later select the candidates by filtering based on minimum size ($37\mu\text{m}$ i.e., 200 pixels) and maximum size ($1000\mu\text{m}$ i.e., 5405 pixels ) of mitotic nuclei while keeping the number of of candidates to classify as low as possible. 
+Initially, we perform gradient analysis on all the focus planes and select focus plane 10 that is having averagely maximum gradient value. Using selected focus plane, we compute the spectral responses of mitotic and background regions for all the available 10 spectral bands as represents in \ref{fig:bands_histogram}(a) while responses of mitotic and non mitotic nuclei are presented in \ref{fig:bands_histogram}(b). The peak of the mitotic and non-mitotic nuclei is almost similar but mitotic and mitotic nuclei have different peaks than background regions. It can be said that multispectral data is able to discriminate between different tissue parts but spectral response of mitotic and non-mitotic nuclei is not distinguishable. This motivate us to perform spatial analysis on multispectral data for achieving reasonable classification nuclei into mitotic and non-mitotic nuclei. Using selected focus plane and spectral band, we perform binary thresholding followed by morphological processing to eliminate small regions and fill holes and later select the candidates by filtering based on minimum size ($37\mu\text{m}$ i.e., 200 pixels) and maximum size ($1000\mu\text{m}$ i.e., 5405 pixels ) of mitotic nuclei while keeping the number of of candidates to classify as low as possible. 
 
 \subsubsection{Multispectral Features Computation}
 Instead of single band as \cite{boucheron2007, masood2009, wu2009, wu2012}, we compute multispectral spatial feature vectors having intensity and textural features. In addition, we also include morphological features ( such as area, roundness, elongation, perimeter and equivalent spherical perimeter) that are computed from regions segmented during candidate detection. The morphological features reflect the phenotype information of mitotic nuclei. Utilizing spatial information in multispectral bands, we compute five intensity based features including mean, median, variance, kurtosis and skewness for candidate. This results in 50 multispectral intensity based features. Haralick co-occurrence (HC) \cite{haralick1973} and run-length (RL) \cite{galloway1975} features are computed with 1 displacement vector in four direction $(0^o, 45^o, 90^o, 135^o)$ for all the spectral bands as \cite{irshad2013b}. These multispectral textural features are rotationally invariant. So by making average in all four directions, eight HC and ten RL features are computed for each candidate in single spectral band. The resulted multispectral textural features vector consists of 80 HC features and 100 RL features for each candidates. The final multispectral spatial features vector contains 235 features for each candidate. 
